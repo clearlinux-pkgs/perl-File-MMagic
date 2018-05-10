@@ -4,7 +4,7 @@
 #
 Name     : perl-File-MMagic
 Version  : 1.16
-Release  : 1
+Release  : 2
 URL      : http://search.cpan.org/CPAN/authors/id/K/KN/KNOK/File-MMagic-1.16.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/K/KN/KNOK/File-MMagic-1.16.tar.gz
 Summary  : No detailed summary available
