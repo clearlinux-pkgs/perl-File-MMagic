@@ -1,3 +1,175 @@
+2013-07-02  NOKUBI Takatsugu  <knok@daionet.gr.jp>
+
+	* MMagic.pm: Version 1.30.
+
+2013-01-21  NOKUBI Takatsugu  <knok@daionet.gr.jp>
+
+	* MMagic.pm (checktype_byfilename): Remove Scalar::Util::weaken.
+	  To prevent too much decrement REFCNT.
+
+2012-07-12  NOKUBI Takatsugu  <knok@daionet.gr.jp>
+
+	* MMagic.pm (checktype_contents): Fix infinity loop bug.
+	Reported by NMOLDAV@cpan.org (#77836)
+	* Version 1.29.
+
+2012-06-29  NOKUBI Takatsugu  <knok@daionet.gr.jp>
+
+	* MMagic.pm: Add missing =back.
+
+2012-05-31  NOKUBI Takatsugu  <knok@daionet.gr.jp>
+
+	* MMagic.pm: Version 1.28.
+
+2012-03-15  NOKUBI Takatsugu  <knok@daionet.gr.jp>
+
+	* MMagic.pm (readMagicEntry): Removed deprecated code
+	  (defined(@array)) reported by wyant@cpan.org (#74252).
+
+2011-07-21  Yukio USUDA  <usu@namazu.org>
+
+	* MMagic.pm (checktype_byfilename): Fixed memory leak.
+
+2007-10-02  NOKUBI Takatsugu  <knok@daionet.gr.jp>
+
+	* MMagic.pm: Added 'regex' and 'search' support for magic entry,
+	  and fixed fatal error when unknown type in magic entry.
+	  (The patch made by Man Min Yan, thank you).
+
+2006-09-19  NOKUBI Takatsugu  <knok@daionet.gr.jp>
+
+	* MMagic.pm (readMagicLine): Added Hex representation support.
+	  (The patch made by Man Min Yan, thank you)
+
+2006-07-01  NOKUBI Takatsugu  <knok@daionet.gr.jp>
+
+	* MMagic.pm (checktype_container): Added container check.
+	  (Powerd by CodeFest 2006 Akihabara
+	   https://members.fsij.org/trac/codefestakihabara2006c)
+
+2006-06-26  NOKUBI Takatsugu  <knok@daionet.gr.jp>
+
+	* Applied subclass patch, made by Michael Hendricks.
+
+2006-05-23  NOKUBI Takatsugu  <knok@daionet.gr.jp>
+
+	* MMagic.pm: Version 1.27.
+
+	* MMagic.pm (readMagicLine): Changed regex for magic entry.
+	  (Reported by Dylan Vanderhoof, thank you)
+
+2006-05-17  NOKUBI Takatsugu  <knok@daionet.gr.jp>
+
+	* MMagic.pm: Added a new line at the end of file.
+	  (Reported by Vilmos Soti, thank you.)
+
+2006-02-08  Yukio USUDA  <usu@namazu.org>
+
+	* MMagic.pm (magicMatch, dumpMagic): Fixed time waste problem.
+
+2006-01-30  NOKUBI Takatsugu  <knok@daionet.gr.jp>
+
+	* MMagic.pm: Version 1.26.
+
+2006-01-12  Yukio USUDA  <usu@namazu.org>
+
+	* MMagic.pm (magicMatchStr): Fixed Bug. Enbuged at Chageset 194.
+
+2006-01-11  NOKUBI Takatsugu  <knok@daionet.gr.jp>
+
+	* README.* : Added the Trac URL.
+
+2006-01-05  Yukio USUDA  <usu@namazu.org>
+
+	* MMagic.pm (checktype_data): performance improve.
+	  http://www.namazu.org/trac-namazu/trac.cgi/ticket/8
+
+	* MMagic.pm (magicMatchStr): Fixed time waste problem.
+
+	* MMagic.pm (__DATA__): Perfomance tuning for mknmz.
+	  http://www.namazu.org/pipermail/namazu-devel-ja/2005-December/000793.html
+
+2005-08-27  NOKUBI Takatsugu  <knok@daionet.gr.jp>
+
+	* Version 1.25.
+
+	* Moved Build.PL to contrib directory.
+
+2005-08-01  NOKUBI Takatsugu  <knok@daionet.gr.jp>
+
+	* Version 1.24.
+
+	* MMagic.pm (check_binary): Removed brackets, closes #13535.
+	  (Reported by dakkar, thank you)
+
+2005-07-29  NOKUBI Takatsugu  <knok@daionet.gr.jp>
+
+	* MMagic.pm: Version 1.23.
+
+2004-04-21  NOKUBI Takatsugu  <knok@daionet.gr.jp>
+
+	* MMagic.pm (magicMatchStr): Added a length check.
+	  Reported by Tadamasa Teranishi, thank you.
+
+2004-03-17  NOKUBI Takatsugu  <knok@daionet.gr.jp>
+
+	* Build.PL: Added.
+	  Contributed by Ryuji Abe, thank you.
+
+2004-03-15  NOKUBI Takatsugu  <knok@daionet.gr.jp>
+
+	* MMagic.pm: Version 1.22.
+	  Changed to treat string/[BCc] as same as string.
+
+	* Added the 4th test.
+
+2003-11-21  NOKUBI Takatsugu  <knok@daionet.gr.jp>
+
+	* Version 1.21.
+
+	* Fixed some tests (bad usage of new method).
+
+	* Added the third test.
+	  Contributed by Simon Matthews, thank you!
+
+2003-11-20  NOKUBI Takatsugu  <knok@daionet.gr.jp>
+
+	* MMagic.pm (new): Fixed mod_perl issue.
+	  Contributed by Simon Matthews, thank you!
+
+2003-07-31  NOKUBI Takatsugu  <knok@daionet.gr.jp>
+
+	* Version 1.20.
+
+	* MMagic.pm (addMagicEntry): Added a capability of adding sub entry.
+
+2003-05-08  NOKUBI Takatsugu  <knok@daionet.gr.jp>
+
+	* Version 1.19.
+
+	* MMagic.pm (new): Changed the scope of $dataLoc variable.
+	  I think it should be fix the following problem.
+	  https://rt.cpan.org/Ticket/Display.html?id=2499
+	  If the problem is still there, mail me please.
+	  (Reported and patch contributed by Mark Stosberg, thank you)
+
+	* MMagic.pm (__DATA__): Added EPS entry.
+	  (Contributed by Jason Maggard, thank you)
+
+2003-03-26  NOKUBI Takatsugu  <knok@daionet.gr.jp>
+
+	* Version 1.18.
+
+	* MMagic.pm (new): Fixed special entry for x-roff.
+	(Reported by Okayasu, thank you)
+
+2003-03-03  NOKUBI Takatsugu  <knok@daionet.gr.jp>
+
+	* Version 1.17.
+
+	* MMagic.pm (__DATA__): Removed unnecessary tab in audio/x-wav.
+	(Reported by Knut Haugen, thank you)
+
 2002-09-12  NOKUBI Takatsugu  <knok@daionet.gr.jp>
 
         * Version 1.16.
