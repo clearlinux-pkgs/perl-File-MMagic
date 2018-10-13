@@ -4,13 +4,14 @@
 #
 Name     : perl-File-MMagic
 Version  : 1.30
-Release  : 3
+Release  : 4
 URL      : http://search.cpan.org/CPAN/authors/id/K/KN/KNOK/File-MMagic-1.30.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/K/KN/KNOK/File-MMagic-1.30.tar.gz
 Summary  : Guess file type from contents
 Group    : Development/Tools
 License  : BSD-3-Clause-Attribution
-Requires: perl-File-MMagic-man
+Requires: perl-File-MMagic-license = %{version}-%{release}
+BuildRequires : buildreq-cpan
 BuildRequires : file-dev
 
 %description
@@ -18,12 +19,21 @@ File::MMagic
 NOKUBI Takatsugu <knok@daionet.gr.jp>
 Yukio USUDA  <usu@namazu.org>
 
-%package man
-Summary: man components for the perl-File-MMagic package.
+%package dev
+Summary: dev components for the perl-File-MMagic package.
+Group: Development
+Provides: perl-File-MMagic-devel = %{version}-%{release}
+
+%description dev
+dev components for the perl-File-MMagic package.
+
+
+%package license
+Summary: license components for the perl-File-MMagic package.
 Group: Default
 
-%description man
-man components for the perl-File-MMagic package.
+%description license
+license components for the perl-File-MMagic package.
 
 
 %prep
@@ -51,10 +61,12 @@ make TEST_VERBOSE=1 test || :
 
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/perl-File-MMagic
+cp COPYING %{buildroot}/usr/share/package-licenses/perl-File-MMagic/COPYING
 if test -f Makefile.PL; then
-make pure_install PERL_INSTALL_ROOT=%{buildroot}
+make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
-./Build install --installdirs=site --destdir=%{buildroot}
+./Build install --installdirs=vendor --destdir=%{buildroot}
 fi
 find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
@@ -63,8 +75,12 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.1/File/MMagic.pm
+/usr/lib/perl5/vendor_perl/5.26.1/File/MMagic.pm
 
-%files man
+%files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/File::MMagic.3
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/perl-File-MMagic/COPYING
