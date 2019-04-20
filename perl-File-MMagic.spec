@@ -4,7 +4,7 @@
 #
 Name     : perl-File-MMagic
 Version  : 1.30
-Release  : 12
+Release  : 13
 URL      : http://search.cpan.org/CPAN/authors/id/K/KN/KNOK/File-MMagic-1.30.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/K/KN/KNOK/File-MMagic-1.30.tar.gz
 Summary  : Guess file type
