@@ -4,10 +4,10 @@
 #
 Name     : perl-File-MMagic
 Version  : 1.30
-Release  : 10
+Release  : 11
 URL      : http://search.cpan.org/CPAN/authors/id/K/KN/KNOK/File-MMagic-1.30.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/K/KN/KNOK/File-MMagic-1.30.tar.gz
-Summary  : Guess file type from contents
+Summary  : Guess file type
 Group    : Development/Tools
 License  : BSD-3-Clause-Attribution
 Requires: perl-File-MMagic-license = %{version}-%{release}
@@ -23,6 +23,7 @@ Yukio USUDA  <usu@namazu.org>
 Summary: dev components for the perl-File-MMagic package.
 Group: Development
 Provides: perl-File-MMagic-devel = %{version}-%{release}
+Requires: perl-File-MMagic = %{version}-%{release}
 
 %description dev
 dev components for the perl-File-MMagic package.
